@@ -23,9 +23,9 @@ Steps to Create a Samba File Server
       
       force directory mode = 0777 [(change to permissions of choosing) for permissions guidline use https://chmod-calculator.com/] 
 
-5. Restart Samba: sudo systemctl restart smbd
-6. Chech Status of Samba: sudo systemctl status smbd
-7. If status is disabled, enable: sudo systemctl enable smbd
-8. Add a username and password for security: sudo smbpasswd -a <username_here> (it will then prompt you to enter a password, enter password)
-9. Note if you have UFW installed you must create a rule for Samba access: sudo ufw allow from <IP_Address> to any app Samba
-10. To access on Window go to winodws explorer and type in: \\\\<IP_Address>
+4. Restart Samba: sudo systemctl restart smbd
+5. Chech Status of Samba: sudo systemctl status smbd
+6. If status is disabled, enable: sudo systemctl enable smbd
+7. Add a username and password for security: sudo smbpasswd -a <username_here> (it will then prompt you to enter a password, enter password)
+8. Note if you have UFW installed you must create a rule for Samba access: sudo ufw allow from <IP_Address> to any app Samba
+9. To access on Window go to winodws explorer and type in: \\\\<IP_Address>

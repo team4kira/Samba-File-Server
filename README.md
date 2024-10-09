@@ -21,7 +21,7 @@ Steps to Create a Samba File Server
       
       force create mode = 0666 [(change to permissions of choosing)]
       
-      force directory mode = 0777 [(change to permissions of choosing) for permissions guidline use https://chmod-calculator.com/] 
+      force directory mode = 0777 [(change to permissions of choosing) for permissions guideline use https://chmod-calculator.com/] 
 
 4. Restart Samba: sudo systemctl restart smbd
 5. Chech Status of Samba: sudo systemctl status smbd

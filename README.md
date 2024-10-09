@@ -6,7 +6,7 @@ Steps to Create a Samba File Server
 2. Using an editing tool on /etc/samba/smb.conf: sudo nano /etc/samba/smb.conf
 3. Add the following command to the bottom smb.conf:
  
-  [Add Below]
+  [Add Below for safe measure don't include spaces]
       
       [Public]
       comment = For Public

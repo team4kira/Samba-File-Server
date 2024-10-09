@@ -7,6 +7,7 @@ Steps to Create a Samba File Server
 3. Add the following command to the bottom smb.conf:
  
   [Public]
+      
       comment = For Public
       
       browseable = yes

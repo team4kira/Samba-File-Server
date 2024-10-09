@@ -5,6 +5,7 @@ Steps to Create a Samba File Server
 1. Install Samba File Server on Kali Linux: sudo apt-get install samba -y
 2. Using an editing tool on /etc/samba/smb.conf: sudo nano /etc/samba/smb.conf
 3. Add the following command to the bottom smb.conf:
+ 
   [Public]
       comment = For Public
       browseable = yes

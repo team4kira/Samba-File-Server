@@ -4,9 +4,9 @@ Steps to Create a Samba File Server
 
 1. Install Samba File Server on Kali Linux: sudo apt-get install samba -y
 2. Using an editing tool on /etc/samba/smb.conf: sudo nano /etc/samba/smb.conf
-3. Add the following command to the bottom smb.conf:
+3. Add the following command to the bottom of file smb.conf:
  
-  [Add Text Below]
+  [Add Text Below to smb.conf file]
       
       [Public]
       comment = For Public 
@@ -21,5 +21,5 @@ Steps to Create a Samba File Server
 5. Chech Status of Samba: sudo systemctl status smbd
 6. If status is disabled, enable: sudo systemctl enable smbd
 7. Add a username and password for security: sudo smbpasswd -a <username_here> (it will then prompt you to enter a password, enter password)
-8. Note if you have UFW installed you must create a rule for Samba access: sudo ufw allow from <IP_Address> to any app Samba
-9. To access on Window go to winodws explorer and type in: \\\\<IP_Address>
+8. Note if you have Uncomplicated Firewall (UFW) installed you must create a rule for Samba access: sudo ufw allow from <IP_Address> to any app Samba
+9. To access on Window go to Winodws Explorer and type in: \\\\<IP_Address>

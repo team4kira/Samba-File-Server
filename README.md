@@ -9,19 +9,13 @@ Steps to Create a Samba File Server
   [Add Below for safe measure make single space]
       
       [Public]
-      comment = For Public
-      
-      browseable = yes
-      
-      path = /path/of/directory [(the command pwd can be used to establish the folder path you're in)] 
-      
-      writable = yes
-      
-      read only = no
-      
-      force create mode = 0666 [(change to permissions of choosing)]
-      
-      force directory mode = 0777 [(change to permissions of choosing) for permissions guideline use https://chmod-calculator.com/] 
+      comment = For Public <br>
+      browseable = yes <br>
+      path = /path/of/directory [(the command pwd can be used to establish the folder path you're in)] <br>
+      writable = yes <br>
+      read only = no <br>
+      force create mode = 0666 [(change to permissions of choosing)] <br>
+      force directory mode = 0777 [(change to permissions of choosing) for permissions guideline use https://chmod-calculator.com/] <br>
 
 4. Restart Samba: sudo systemctl restart smbd
 5. Chech Status of Samba: sudo systemctl status smbd

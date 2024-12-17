@@ -27,6 +27,8 @@ Note: By default, Samba operates within your local network (LAN). This means it 
 9. To access on Windows go to Windows Explorer and type in: \\\\<IP_Address>
 10. Then input you username and password for access to your Samba File Server
 
+* Best practice to make a copy of smb.conf file as a backup, once you have successfully gained access
+
 **How to disable Home Directory Access (Optional)** 
 
 Samba automatically permits Home Directory access. In order to prevent Home Directory Visibility change the following in smb.conf file. `sudo nano /etc/samba/smb.conf`

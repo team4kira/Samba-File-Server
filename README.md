@@ -23,7 +23,7 @@
 7. Add a username and password for security: `sudo smbpasswd -a <username_here>` (it will then prompt you to enter a password, enter password)
 8. Note if you have Uncomplicated Firewall (UFW) installed you must create a rule for Samba access: `sudo ufw allow from <IP_Address> to any app Samba`
 9. To access on Windows go to Windows Explorer and type in: \\\\<IP_Address>
-10. Then imput you username and password for access to Samba File Server
+10. Then input you username and password for access to your Samba File Server
 
 **How to disable Home Directory Access (Optional)** 
 

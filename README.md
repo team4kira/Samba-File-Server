@@ -11,11 +11,11 @@
       [Public]
       comment = For Public 
       browseable = yes 
-      path = /path/of/directory # go to the directory you want accessed and type in pwd to get the exact path 
+      path = /path/of/directory # Go to the directory you want accessed and type in pwd to get the exact path 
       writable = yes 
       read only = no 
-      force create mode = 0666 # change to permissions of choosing 
-      force directory mode = 0777 # change to permissions of choosing) for permissions guideline use https://chmod-calculator.com/
+      force create mode = 0666 # Change to permissions of choosing 
+      force directory mode = 0777 # Change to permissions of choosing for permissions guideline use https://chmod-calculator.com/
 
 4. Restart Samba: `sudo systemctl restart smbd`
 5. Chech Status of Samba: `sudo systemctl status smbd`
@@ -28,7 +28,7 @@
 
 Samba automatically permits Home Directory access. In order to prevent Home Directory Visibility change the following in smb.conf file. `sudo nano /etc/samba/smb.conf`
 
-[Add Text Below to smb.conf file]
+[Edit the [homes] section of smb.conf to the following]
       
       [homes]
       comment = Home Directories

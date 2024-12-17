@@ -44,4 +44,4 @@ Samba automatically permits Home Directory access. In order to prevent Home Dire
       valid users = MYDOMAIN\%S # Acts as a redundancy 
 
 * Anytime changes are made to smb.conf you should restart samba: `sudo systemctl restart smbd`
-* To identify what is being shared used the following command: `smbclient -L localhost -U username_here`
+* To identify what is being shared use the following command: `smbclient -L localhost -U username_here`

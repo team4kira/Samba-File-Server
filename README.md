@@ -22,7 +22,7 @@
 6. If status is disabled, enable: `sudo systemctl enable smbd`
 7. Add a username and password for security: `sudo smbpasswd -a <username_here>` (it will then prompt you to enter a password, enter password)
 8. Note if you have Uncomplicated Firewall (UFW) installed you must create a rule for Samba access: `sudo ufw allow from <IP_Address> to any app Samba`
-9. To access on Window go to Winodws Explorer and type in: \\\\<IP_Address>
+9. To access on Windows go to Windows Explorer and type in: \\\\<IP_Address>
 
 **How to disable Home Directory Access (Optional)** 
 

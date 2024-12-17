@@ -1,5 +1,7 @@
 # Samba-File-Server Kali Linux
 
+Note: By default, Samba operates within your local network (LAN). This means it relies on IP and subnet configuration to ensure visibility and access are limited to devices on the same network. 
+
 **Steps to Create a Samba File Server**
 
 1. Install Samba File Server on Kali Linux: `sudo apt-get install samba -y`

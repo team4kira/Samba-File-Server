@@ -11,11 +11,11 @@ Steps to Create a Samba File Server
       [Public]
       comment = For Public 
       browseable = yes 
-      path = /path/of/directory [(the command pwd can be used to establish the folder path you're in)] 
+      path = /path/of/directory # go to the directory you want accessed and type in pwd to get the exact path 
       writable = yes 
       read only = no 
-      force create mode = 0666 [(change to permissions of choosing)] 
-      force directory mode = 0777 [(change to permissions of choosing) for permissions guideline use https://chmod-calculator.com/] 
+      force create mode = 0666 # change to permissions of choosing 
+      force directory mode = 0777 # change to permissions of choosing) for permissions guideline use https://chmod-calculator.com/
 
 4. Restart Samba: `sudo systemctl restart smbd`
 5. Chech Status of Samba: `sudo systemctl status smbd`
@@ -23,3 +23,20 @@ Steps to Create a Samba File Server
 7. Add a username and password for security: `sudo smbpasswd -a <username_here>` (it will then prompt you to enter a password, enter password)
 8. Note if you have Uncomplicated Firewall (UFW) installed you must create a rule for Samba access: `sudo ufw allow from <IP_Address> to any app Samba`
 9. To access on Window go to Winodws Explorer and type in: \\\\<IP_Address>
+
+How to disable Home Directory Access
+
+Samba automatically permits Home Directory access. In order to prevent Home Directory Visibility change the following in smb.conf file. `sudo nano /etc/samba/smb.conf`
+
+[Add Text Below to smb.conf file]
+      
+      [homes]
+      comment = Home Directories
+      available = no
+      browseable = yes 
+      writable = yes
+      valid users = %S # Command Dynamically resolves to the username of the user trying to access the share Still restricts access to authenticated users
+      valid users = MYDOMAIN\%S # Acts as a redundancy 
+
+* Anytime changes are made to smb.conf you should restart samba: `sudo systemctl restart smbd`
+* To identify what is being shared used the following command: `smbclient -L localhost -U username_here`

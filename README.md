@@ -1,6 +1,6 @@
 # Samba-File-Server Kali Linux
 
-Steps to Create a Samba File Server 
+`Steps to Create a Samba File Server` 
 
 1. Install Samba File Server on Kali Linux: `sudo apt-get install samba -y`
 2. Using an editing tool on /etc/samba/smb.conf: `sudo nano /etc/samba/smb.conf`
@@ -24,7 +24,7 @@ Steps to Create a Samba File Server
 8. Note if you have Uncomplicated Firewall (UFW) installed you must create a rule for Samba access: `sudo ufw allow from <IP_Address> to any app Samba`
 9. To access on Window go to Winodws Explorer and type in: \\\\<IP_Address>
 
-How to disable Home Directory Access
+`How to disable Home Directory Access (Optional)` 
 
 Samba automatically permits Home Directory access. In order to prevent Home Directory Visibility change the following in smb.conf file. `sudo nano /etc/samba/smb.conf`
 

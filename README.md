@@ -11,13 +11,19 @@ Note: By default, Samba operates within your local network (LAN). This means it 
   [Add Text Below to smb.conf file]
       
       [Public]
-      comment = For Public 
-      browseable = yes 
-      path = /path/of/directory # Go to the directory you want accessed and type in pwd to get the exact path 
-      writable = yes 
-      read only = no 
-      force create mode = 0666 # Change to permissions of choosing 
-      force directory mode = 0777 # Change to permissions of choosing for permissions guideline use https://chmod-calculator.com/
+    comment = Public Drive
+    path = /mnt/drive1
+    
+    browseable = yes
+    read only = no
+    guest ok = no
+    valid users = username
+    
+    create mask = 0644 # Change to permissions of choosing 
+    force create mode = 0644
+    directory mask = 0755 # Change to permissions of choosing 
+    force directory mode = 0755
+    # [Change to permissions of choosing ](https://chmod-calculator.com/)
 
 4. Restart Samba: `sudo systemctl restart smbd`
 5. Chech Status of Samba: `sudo systemctl status smbd`

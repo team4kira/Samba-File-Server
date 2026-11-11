@@ -23,7 +23,7 @@ Note: By default, Samba operates within your local network (LAN). This means it 
     force create mode = 0644
     directory mask = 0755 # Change to permissions of choosing 
     force directory mode = 0755
-    # [Change to permissions of choosing ](https://chmod-calculator.com/)
+    # Following tool can be used for permissions calculation: https://chmod-calculator.com/
 
 4. Restart Samba: `sudo systemctl restart smbd`
 5. Chech Status of Samba: `sudo systemctl status smbd`

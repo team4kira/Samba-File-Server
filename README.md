@@ -26,7 +26,7 @@ Note: By default, Samba operates within your local network (LAN). This means it 
     # Following tool can be used for permissions calculation: https://chmod-calculator.com/
 
 4. Restart Samba: `sudo systemctl restart smbd`
-5. Chech Status of Samba: `sudo systemctl status smbd`
+5. Check Status of Samba: `sudo systemctl status smbd`
 6. If status is disabled, enable: `sudo systemctl enable smbd`
 7. Add a username and password for security: `sudo smbpasswd -a <username_here>` (it will then prompt you to enter a password, enter password)
 8. Note if you have Uncomplicated Firewall (UFW) installed you must create a rule for Samba access: `sudo ufw allow from <IP_Address> to any app Samba`

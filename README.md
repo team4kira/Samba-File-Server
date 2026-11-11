@@ -1,4 +1,4 @@
-# Samba-File-Server Kali Linux
+# Samba-File-Server
 
 Note: By default, Samba operates within your local network (LAN). This means it relies on IP and subnet configuration to ensure visibility and access are limited to devices on the same network. 
 

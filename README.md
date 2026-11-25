@@ -2,15 +2,13 @@
 
 Note: By default, Samba operates within your local network (LAN). This means it relies on IP and subnet configuration to ensure visibility and access are limited to devices on the same network. 
 
-**Steps to Create a Samba File Server**
+## Steps to Create a Samba File Server
 
 1. Install Samba File Server on Kali Linux: `sudo apt-get install samba -y`
 2. Using an editing tool on /etc/samba/smb.conf: `sudo nano /etc/samba/smb.conf`
 3. Add the following command to the bottom of file smb.conf:
- 
-  [Add Text Below to smb.conf file]
-      
-      [Public]
+   ```ini
+    [Public]
     comment = Public Drive
     path = /mnt/drive1
     
@@ -24,7 +22,6 @@ Note: By default, Samba operates within your local network (LAN). This means it 
     directory mask = 0755 # Change to permissions of choosing 
     force directory mode = 0755
     # Following tool can be used for permissions calculation: https://chmod-calculator.com/
-
 4. Restart Samba: `sudo systemctl restart smbd`
 5. Check Status of Samba: `sudo systemctl status smbd`
 6. If status is disabled, enable: `sudo systemctl enable smbd`
@@ -35,19 +32,18 @@ Note: By default, Samba operates within your local network (LAN). This means it 
 
 * Best practice to make a copy of smb.conf file as a backup, once you have successfully gained access
 
-**How to disable Home Directory Access (Optional)** 
+## How to disable Home Directory Access (Optional) 
 
 Samba automatically permits Home Directory access. In order to prevent Home Directory Visibility change the following in smb.conf file. `sudo nano /etc/samba/smb.conf`
-
-[Edit the [homes] section of smb.conf to the following]
-      
+```ini     
       [homes]
       comment = Home Directories
       available = no
       browseable = yes 
       writable = yes
       valid users = %S # Command Dynamically resolves to the username of the user trying to access the share Still restricts access to authenticated users
-      valid users = MYDOMAIN\%S # Acts as a redundancy 
+      valid users = MYDOMAIN\%S # Acts as a redundancy
+```
 
 * Anytime changes are made to smb.conf you should restart samba: `sudo systemctl restart smbd`
 * To identify what is being shared use the following command: `smbclient -L localhost -U <username_here>`
